@@ -1,0 +1,72 @@
+	2.1 - Introduction to Boosting
+
+		- Boosting is similar to Bagging in that it allows for sampling that results in weak learners or models, that in aggregate create robust predictions.
+
+		- Boosting works by sequentially calibrating models, where the starting training set in the original sample of the data, and the next is a new sample of data made from the predictions of the first. That ios
+
+			Original Data -> Model 1 -> 
+				Model 1 Predictions -> Model 2 ->
+					Model 2 Predictions -> Model 3 - >
+						...
+
+		As a result, Boosting is computationaly more expensive than Bagging as Bagging trains its model in parallelization
+
+		- Like Bagging, each model has a vote in the final prediction. However, an additional model may be trained to determine the weight of each model.
+
+		- In summary,
+
+			Boosting is the sequential training of weak learners to produce a strong learner
+			Bagging is the parallel training of weak learners to produce a strong learner
+
+		- There are 3 popular boosting methods
+
+			- Adaptive Boosting (AdaBoosting)
+			- Gradient Boosting 
+			- Extreme Gradient Boosting (XG Boost)
+
+		- AdaBoosting
+
+			If model i performs poorly in making a prediction on a data point, then that data point receives more importance in the next model. That is, each successive learner focuses more on the harder to fit data.
+
+		- Gradient Boosting (GBMmethod)
+
+			Every sequential model is trained on the sum of the residual errors predicted from the previous models.
+
+		- XG Boost
+
+			Gradient Boosting on steroids. Parallel implementation, pre-pruning implemented, works with missing data, cache optimization. Very popular for 2 reasons:
+
+			- Great mathematics behind it
+
+			- Great implementation
+     
+  2.2 - Bagging vs Boosting
+  
+      In summary, Bagging and Boosting may be compared as follows
+      
+      Bagging: Parallel learning, where each learner is independent of eachother
+      Boosting: Sequential learning, where each learner is dependent of eachother. Successive weak leaners to improve the accuracy from the prior learners
+      
+      Bagging: Equal weightage to each learner in the final prediction
+      Boosting: Weighted average, whre more weight is assigned to those learners with better performance
+      
+      Bagging: Independent samples, where each is drawn from the original dataset with replacement to train each learner
+      Boosting: Dependent sdamples, where each subsequent sample have more observations related to higher residual errors from the previous leaner
+      
+      Bagging reduces the variance of the final prediction
+      Boosting reduces the bias of the final prediction
+      
+      Bagging is used for Bagging Classifier and Random Forest Models
+      Boosting is used for AdaBoost and Gradient Boosting Classifier.
+      
+2.3 - AdaBoost
+
+  The lecture has a very interesting diagram on AdaBoost working. In a decision tree model, a split is made before determining the errors. In the next model, the errors receive more weight before a split is determined.
+  
+  This is iterated through 3 separate decision trees.
+  
+  Finally, the final prediction is an usually weighted prediction.
+  
+  
+      
+      
