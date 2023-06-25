@@ -84,6 +84,44 @@
 	Y' = h_(0)(X) + A_(1)*h_(1)(X) + A_(2)*h_(2)(X),
 
 	where A_(i) are the learning rates, selected, and between 0 and 1. These are used to prevent overfitting.
+
+2.5 - XGBoost Overview
+
+	A popular algorithm due to to implementation (what does this mean?).
+
+	It is GradBoost on steroids.
+
+	If we recall that GradBoost cannot work in parallel, and only sequential - it so happens that XGBoost doesn't have this restriction.
+
+	Some salient features of XGBoost include
+
+		- Parallelization
+			- Data stored in-memory units called blocks. The optimal split is found using the block structure, and in parallel
+		- Cache Optimization
+			- Block sizes are optimized for efficient parallelization and best use of hardware
+		- Out-of-core Computing
+			- Handles large data sets which do not fit in memory
+		- Distributed Computing
+			- Trains huge models using mupltiple similar machines
+		- Missing Values Imputation
+			- Handles missing data internally, using a default direction for the missing value in a decision tree. However, the direction is then learned in the tree construction process to choose the best direction that optimizes the training loss.
+
+	When would we use GradBopost over XGBoost?
+
+2.6 Hands-On Boosting
+
+2.7 Stacking
+
+	Using heterogenous models together.
+
+	
+
+
+	
+
+	
+
+	
   
   
       
