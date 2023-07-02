@@ -1,0 +1,5 @@
+3.3 Oversampling and Undersampling
+
+    - There are cases where there is a mismatch in classifications, say between A and B.
+    - Across the sample of data A may represent 10% of the entire sample, and B the remaining 90%
+    - asdasd
