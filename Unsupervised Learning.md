@@ -65,6 +65,9 @@
    - As K increases, the sum of squares decreases, and the question is at what K is the rate of decreases decreasing, such that the marginal decrease more an additional cluster is a waste of resources.
 
    - Visually, the "Elbow Method" is used, as the elbow of the arm reflects that K to select, as additional Ks have a ineffective marginal decrease.
+  
+# 1.4 K-means Clustering Hands-on
+
    
 
    
