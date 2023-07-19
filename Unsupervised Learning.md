@@ -20,3 +20,15 @@
 -   If p = 1 then D is Manhatten
 -   If p = inf then D is Chebyshev
 -   Though p is any real number, and for every p, there is a new measure of distance
+
+# 1.2 Types of Clustering
+
+- There are two types of clustering (i) Connectivity based clustering (ii) Centroid based clustering
+- Connectivity based clustering looks at the distance between every row, before determining the clusters. This is computationally expensive. If there are N rows, then there are N*(N+1)/2 calculations
+
+- Centroid based clustering fixed the number of clusters or centroids, and calculates the distances to the centroids. If there are M centroids then number of calculations is M*N
+
+- Dendograms are trees showing how the centroid clusters are formed. y-axis is distance and x-axis is objects
+
+- Algorithms can be agglomerative meaning starting with 1 object and aggregating them into clusteres, or divisive, where one stats with complete data and divides them into partitions
+  
