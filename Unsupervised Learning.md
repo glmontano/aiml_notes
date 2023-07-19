@@ -36,4 +36,39 @@
 
 - K-means clustering algorithm scales in the order of n, while the agglomerative clustering algorithm scales in the order of n2.
 
+# 1.3 K-mean Clustering
+
+- To recall - consider N points. Under Connectivity based clustering - there will be N*(N+1)/2 distances between the N points, and those with the smaller distances will be considered to be more similar.
+
+- Under Centroid based clustering - there is a given number of centroids. Distances these points are made to the centroids. Thsoe points that have similar distances to the centroid will be considered similar.
+
+- The key distinction here is that similarity under the centroid approach is determined by distances to the centroid and NOT between the points themselves.
+
+- K-means clustering is the most used clustering technique.
+  - It works by minimizing the "within-cluster sum of squares", which is the usual expression of variance on the points, where the mean is the centroid's location.
+
+ - The minimization process happens through Lloyd's algorithm, whcih works as follows
+   - A K is given
+   - K clusters are guessed across the data
+   - Distances are calculated from each point, to each cluster
+   - Those points that are closest to a cluser, are assigned to the group for that cluster
+   - Given a group, a new cluster is selected that, in aggregate, is even closer to the points in that group
+   - However, in saying that, new distances are calcualted to the new clusters in each group
+   - If a point ends up being closer to a cluser in another group - then the process iterates
+   - If the points do not move from the group - then the algorithm is complete, the the process has converged
+     
+ - The next question is what is optimal number of K. One way to visualize the effect of different values of K is through a graph, where the vertical axis is the within group sum of squares, and the horizontal axis is the number of clusters. We can expect to observe
+
+   - When K = 1, we expect the sum of squares to be at its highest, and compression is highest as all data is compressed toa  single point.
+   - When K -> inf, we expect the sum of squres to be at its lowest, the compression the least, and the accuracy the highest.
+
+   - As K increases, the sum of squares decreases, and the question is at what K is the rate of decreases decreasing, such that the marginal decrease more an additional cluster is a waste of resources.
+
+   - Visually, the "Elbow Method" is used, as the elbow of the arm reflects that K to select, as additional Ks have a ineffective marginal decrease.
+   
+
+   
+
+
   
+   
