@@ -31,4 +31,9 @@
 - Dendograms are trees showing how the centroid clusters are formed. y-axis is distance and x-axis is objects
 
 - Algorithms can be agglomerative meaning starting with 1 object and aggregating them into clusteres, or divisive, where one stats with complete data and divides them into partitions
+
+- K-means clustering involves assigning points to cluster centroids based on their distance from the centroids and the distance metric used is Euclidean distance.
+
+- K-means clustering algorithm scales in the order of n, while the agglomerative clustering algorithm scales in the order of n2.
+
   
