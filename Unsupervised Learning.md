@@ -68,10 +68,38 @@
   
 # 1.4 K-means Clustering Hands-on
 
-   
+Just coding
 
-   
+# 1.5 Importance of Scaling
 
+- Given the formula for calculating distance, columns with larger magnitudes will dominate the calcualtion. Therefore, performing scaling, where all columns/variables are have the same scale or magnitudes is required.
 
-  
+- One method of scaling is by performing Z-score scaling, or, the number of standard deviations from the mean, all of which are calculated using the standard statistics
+
+-  Using different distance measures will lead to different clusters. Therefore, one may play around with different distances, and observe the clusters and the results.
+
+-  The Euclidean Measure is one of the most popular methods to use, although are highly scale dependaent. Furthermore, it ignores the relationship between measurements, and is sensitive to outliers. If there are outliers, the Manhattan distance is preferred.
+
+-  We consider another distance measure that considers the relationship between variables - and this called the Mahalanobis Distance.
+
+-    One way to understand this relationship factor, is to understand that while two points may indeed be closer to a cluster, there is no information about the points' closeness to the general data itself.
+
+-   First - determine the natural axis of the data, or the eigenvalues of the covariance matrix of the data. Then, different ellipses of varying distances may be drawn about the axis. In saying that, every point on the ellipsis is considered to be equal distance from the center of the data. As such, a new distance system has been established.
+
+-   Back to the example of two points - if point A is on an ellipisis further away from the one that point B is on, then point A is considered to be of further distance from the data.
+
+-   The formula for this distance is (x-xb)T C-1 (x-xb), where xb is the center, T is transpose and C-1 is the inverse of the covariance matrix.
+
+-   Another distance metric is te JACCARD DISTANCE, which is used to measure the distance between sets of data, and given by 1 - J(A,B), where J(A,B) is the Jaccard Index on sets A and B.
+
+-   The calculation of J(A,B) works off a counting method through | A int B| / |A uni B|. Therefore, if A and B are disjoint then J(A,B) = 0, and the distance is 1.
+
+# 1.6 Applications of Clustering
+
+- Image Processing: Clustering pixels representing objects in each frame
+- Medical - Clustering patient attributes such as age, height and weight...
+- Customer Segmentation: Clusters based on frequency of purchase, value...
+
+# 1.7 Advantages & Disadvantages of K-means Clustering
+
    
