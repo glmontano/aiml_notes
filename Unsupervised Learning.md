@@ -23,7 +23,7 @@
 
 # 1.2 Types of Clustering
 
-- There are two types of clustering (i) Connectivity based clustering (ii) Centroid based clustering
+- There are two types of clustering (i) Connectivity based clustering (ii) Centroid based clustering (K-means clustering)
 - Connectivity based clustering looks at the distance between every row, before determining the clusters. This is computationally expensive. If there are N rows, then there are N*(N+1)/2 calculations
 
 - Centroid based clustering fixed the number of clusters or centroids, and calculates the distances to the centroids. If there are M centroids then number of calculations is M*N
@@ -102,4 +102,38 @@ Just coding
 
 # 1.7 Advantages & Disadvantages of K-means Clustering
 
+- Strengths:
+  -   Simple principles without the need for any complex statistical terms
+  -   Once clusters and their associated centroids are identified, it is easy to assign new objects (e.g. new customers) to a cluser based on the object's distance from the closest centroid.
+  -   Because the method is unsupervised, using the k-means helps to elininate subjectiovity from the analysis
+  -   
+- Weakness:
+  - Choosing the value of K. While the 'Elbow Test' was described, it is more complicated then that
+  - The k-means algorithm is sensitive to the starting position of the initial cetroid. Thus it is important to rerun the k-means analysis several tgimes for a particular value of K to ensure the cluster results provide the overall minimum Within-Sum-of-Squares
+  - Susceptive to curve of dimensionality, where an increase in clusters means an exponential increase in computational requirements
+  - The algorithm involves computation of mean, and so, is sensitive to outliers.
+ 
+# 1.8 Silhouette Coefficient for K-means
+
+- To measure the performance of K-means clustering for a given K, one can calcualte the Silhouette Coefficient defined by
+  S = (B-A)/max(A,B)
+  where A is the average distance of the ith from all other points in its cluster A, excluding itself.
+  where B is the average distance of the same ith point from all other points in the nearest cluster B
+
+  If A < B as expected in the optimization process, then 0 < S <= 1 
+  If A = B then from the numerator S = 0
+  If B < A then -1 <= S < 0
+  
+# 1.9 Visual Analysis of Clustering
+
+- Visualizing data is the best way to understand data well.
+- Graphing marginal densities and their clusters, at different marginal dimensions may allow us to understand the number of clusters.
+
+# 1.10 Dynamic Clustering
+
+- New clustering is pereformed with new data.
+- We can observe how one customer or data moves from cluster to cluster
+- New data can change the cluster structure, also exits or redundant data may have a similar effect
+- Catalysts (customer coupons) may also change behaviours and therefore the structure of clusters
+- Clusters may also change with time
    
