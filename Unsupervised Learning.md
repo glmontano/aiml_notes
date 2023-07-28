@@ -136,4 +136,15 @@ Just coding
 - New data can change the cluster structure, also exits or redundant data may have a similar effect
 - Catalysts (customer coupons) may also change behaviours and therefore the structure of clusters
 - Clusters may also change with time
+
+# 2.1 Hierarchical Clustering
+
+- Clustering is used to better undertsand teh data, instead of looking at variables seperately
+- One can visualize clustering by plotting each row on an N-dimensional plane. THose rows that are similar will be closer together on the N-plane
+- The Euclidean distance applies in N-dimensions
+- A lower triangular matrix providing the difference in distances between each rows may be calcualted to view theproximity between rows
+- By using trees - one may visually find clusters by
+-   (1) Find the pairwise differnces in dinstances between points (call them here dis-difs)
+-   (2) Order the dis-difs in ascending order
+-   (3) 
    
