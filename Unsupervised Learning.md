@@ -136,4 +136,7 @@ Just coding
 - New data can change the cluster structure, also exits or redundant data may have a similar effect
 - Catalysts (customer coupons) may also change behaviours and therefore the structure of clusters
 - Clusters may also change with time
+  
+# 2.1 Hierarchical Clustering
+
    
