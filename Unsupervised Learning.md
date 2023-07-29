@@ -139,4 +139,20 @@ Just coding
   
 # 2.1 Hierarchical Clustering
 
+- Clustering is used to better understand the data, instead of looking at variables seperately
+- One can visualize clustering by plotting each row on an N-dimensional plane. Those rows thjat are similar will be closer together on the N-plane
+- The Euclidean Distance applies in N-dimensions, where the formula is generalized across all pairwise variables between two rows
+- A lower-triangular matrix providing the difference in Euclidean distances between each row may be calculated to view the proximity between rows.
+- By using trees, called a Dendogram, visually, one may identify clusters as follows
+-   1. Find the pairwise diferences in distances between points (call them here dis-diffs)
+    2. Order the dis-diffs in ascending order
+    3. Create the canvas of the tree, where the vertical axis is the space of dis-difs and the horizontal axis is the space of data
+    4. Those points closest to eachother per the dis-difs form a cluster
+    5. We may then generalize this procedure on the clusters themselves, to form a new cluster, should that be the requirement
+    6. Determine the distance between clusters using one of the methodologies
+      i) Single Linkage: The minimum distance between clusters, as determined by the points within
+      ii) Complete Linkage: The maximum distance between clusters, as determined by the points within
+      iii) Average Linkage: Average all pairwise distances between points in different clusters
+      iv) Centroid Method: Average the points within each cluster (therefore determining the centroid) before calculating distance
+      v) Ward's Method: A distance such that the combined cluster would minimize the within-variance between each centroid
    
