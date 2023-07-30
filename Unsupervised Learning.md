@@ -140,10 +140,15 @@ Just coding
 # 2.1 Hierarchical Clustering
 
 - Clustering is used to better understand the data, instead of looking at variables seperately
-- One can visualize clustering by plotting each row on an N-dimensional plane. Those rows thjat are similar will be closer together on the N-plane
+
+- One can visualize clustering by plotting each row on an N-dimensional plane. Those rows that are similar will be closer together on the N-plane
+
 - The Euclidean Distance applies in N-dimensions, where the formula is generalized across all pairwise variables between two rows
+
 - A lower-triangular matrix providing the difference in Euclidean distances between each row may be calculated to view the proximity between rows.
-- By using trees, called a Dendogram, visually, one may identify clusters as follows
+
+- By using trees, called a Dendrfogram, visually, one may identify clusters as follows
+
 -   1. Find the pairwise diferences in distances between points (call them here dis-diffs)
     2. Order the dis-diffs in ascending order
     3. Create the canvas of the tree, where the vertical axis is the space of dis-difs and the horizontal axis is the space of data
@@ -155,4 +160,53 @@ Just coding
       iii) Average Linkage: Average all pairwise distances between points in different clusters
       iv) Centroid Method: Average the points within each cluster (therefore determining the centroid) before calculating distance
       v) Ward's Method: A distance such that the combined cluster would minimize the within-variance between each centroid
+
+- The final number of clusxters depends on the restrictions we place on the number, or maximum distances
+
+- The lower the maximum distance, the more clusters there will be
    
+- The most difficult part of clustering and unsupervised learning, is measuring the performance of the clusters, as there is no output or dependent variable to perform that testing.
+
+# 2.2 Cophenetic Correlation
+
+- Depending on the measure of distance selected as described above, different sets of clusters may be calculated.
+
+- One problem wiht unsupervised learning is that we don't know if one dendrogram is better than another; we don't have a measure of success
+
+- Different Dendrograms mayh be compared using the Cophenetic Correlation.
+
+- This is the correlation between the base Euclean differences between two rows, and another set of distances according to the Dendrogram
+  - Let the rows be X and Y, and construct clusters according to a selected distance methodology
+  - See what distance would result in the clusters containing X and Y to form a new single cluster containing X and Y
+  - Reiterate this process for all points in the data set
+  - Calculate the correlation between the base set of Euclidean distances, and the Dendrogram distances described above
+  - This correlation is the Cophenetic Correlation
+ 
+- The higher the correlation, the more "faithful" the dendrogram is to the data (or something)
+
+# 2.3 Hierarchical Clustering Hands-on
+
+Coding exercise. Skip
+
+# 2.4 Introduction to Dimensionality Reduction
+
+- Dimensionality reduction is useful when there are a large number of columns or independent variables
+
+- Calibrating on multiple columns may lead to overfitting, where irrelevant columns are used, just be chance in their signal
+
+- Reducing dimensionality has a number of benefits including
+    - Removes multi-collinearity to improve ML model performance
+    - Helps reduce over fitting
+    - Decreases computational times for fitting models
+    - Makes visualization easier
+    - Decreases storage requirements
+    - Avoids curse of dimensionality, leading to exponential increase in computational times
+ 
+  - There are two methods of dimensionality reduction
+  -   (1) Feature Elimination: Remove variables that are not important, losing the any insight from those columns
+  -   (2) Feature Extraction: Create a few new variables from the old variables. PCA is the most popular feature extraction technique. Another popular technique is the t-distributed stochastic neighbor embedding (t-SNE), which is a non-linear method
+
+# 2.5 Principal Component Analysis (PCA) - Part 1
+
+
+
