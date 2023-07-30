@@ -224,7 +224,8 @@ Coding exercise. Skip
 - We may look at eigenvalues and their proportionm to the sum of all eigenvalues, and given a threshold, determine which eigenvectors to keep and drop.
 - The new points, referenced by eigenvectors are given by first creating a matrix W = (v1, v2, ..., wn)
 - Then given the original dataset X, the new points are given by Z = X*W
-
+- The problem with PCA is that since the new variables are a linear combination of the original variables, it looses physical interpretability.
+ 
 # 2.7 PCA Hands-on
 
 Coding exercise. No notes.
