@@ -208,5 +208,29 @@ Coding exercise. Skip
 
 # 2.5 Principal Component Analysis (PCA) - Part 1
 
+- The most popular technique for dimensionality reducation.
+- We start with the given axis before calculating the "natural axis of the data"
+- The points are then addressed according to the new axis, and this creates a new set of variables
+- The new set of variables are linear combinations of the old
+- The new set of variables are independent of eachother
+- PCA also provides how important each variable is, and this importance assists in deciding which variables to use for AI/ML
+  
+# 2.6 Principal Component Analysis (PCA) - Part 2
+
+- First scale the variables
+- Second calculate the covariance matrix of the variables
+- By observing the CoVar matrix - one can determine the natural axis through Eigen Decomposition. It also providfes the eigenvalues and eigenvectors. The eigenvectors are the natural axis, which are perpendicular to eachother. The eigenvalue is the measure of explained variation
+- It follows that if the covariance/correlation matrix is applied to the eigenvector, then that vector does not change.
+- We may look at eigenvalues and their proportionm to the sum of all eigenvalues, and given a threshold, determine which eigenvectors to keep and drop.
+- The new points, referenced by eigenvectors are given by first creating a matrix W = (v1, v2, ..., wn)
+- Then given the original dataset X, the new points are given by Z = X*W
+
+# 2.7 PCA Hands-on
+
+Coding exercise. No notes.
+
+
+
+
 
 
