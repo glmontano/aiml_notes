@@ -17,4 +17,15 @@
 - Some inputs, however, are called inhibitary inputs. If they take a value of 1, then the output will be 0.
 
 - In 1958 Rsonblatt created another model, and is considered to be the ongoing model that we use today.
-- 
+  
+- The function instead, is a weighted sum of the inputs, before applying a non-linear function. However, it is still compared to a threshold.
+
+- Ideally, the threshold is left at zero, and the weights are adjusted instead.
+
+- Furthermore, there is a weight or an input that is a constant in independent of the xis. This allows to move the the sum to the left or right.
+
+- This model is used to today's neural networks
+
+- Adapattation is something that AI cannot mimic, which humans can.
+
+- It's important to remember that a neural network isn't a model and does not mimic the brain, rather, it's inspired by how the brain works.
