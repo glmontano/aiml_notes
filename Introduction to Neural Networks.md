@@ -29,3 +29,25 @@
 - Adapattation is something that AI cannot mimic, which humans can.
 
 - It's important to remember that a neural network isn't a model and does not mimic the brain, rather, it's inspired by how the brain works.
+
+# 1.3 Multi-Layer Perceptron
+
+- One observation in the Perceptron model is that after it has been trained, it will perform a logistic regression.
+
+- The model is of the form f(w1x1 + ... + wnxn + wn+1). A prediction is made from this, and compared to actual result. The error is minimized by changed the weights.
+
+- The language is that once trained - the neuron becomes the perceptron.
+
+- Once trained on the training dataset, we move we testing as usual
+
+- We can go a step further by having layers of neurons. There is the
+-   Input layer
+-   Hidden layer
+-   Output layer
+-   The neurons are all connected, that is, the output from the input layer enters the hidden layers, which then enters the output layer.
+-   Every neuron will have precedent connections, where each has a weighting, and therefore a weighting optimization
+-   Non-linear results will enter linearing, before a non-linear function is applied and so on
+-   The neurons in a layer may have their parameters in a single set. The number of weights on a layer is:
+-       (Number of Precedents + 1) * (Number of Neurons in Layer).
+-       The +1 is to consider the bias term.
+-   The weights may also be called degrees of freedom
