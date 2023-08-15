@@ -51,3 +51,4 @@
 -       (Number of Precedents + 1) * (Number of Neurons in Layer).
 -       The +1 is to consider the bias term.
 -   The weights may also be called degrees of freedom
+-   The non-linear function: The sigmoid function forms an S-shaped graph, where x approaches infinity, the probability becomes 1, and as x approaches negative infinity, the probability becomes 0.
