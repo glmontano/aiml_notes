@@ -79,5 +79,44 @@
 - Notation is important.
 - We use matrices and vectors to condense the linear combinations that enter the activation function
 - We can have different activation function with every layer
-- 
+
+# 1.6 Types of Activation Function - Part 1
+
+There are various step functions that will be discussed here
+
+- Step Function, which steps at x = 0, which is effectively the threshold. One issue with the step function is the sharp increase, and it is not differentiable at the threshold, which is a problem when optiizing weights.
+  
+- The ability to learn depends on the activation function being smooth. Efficient learning, that is.
+
+- Sigmoid Function, which is a smoothed version of the step function. f(x) = 1/(1+exp(-x)). This is a very common activation function, and differentiable everywhere. It has the benefit of adjusting the range by applying a simply transformation.
+
+- Another activation function in tanh = 2s(2x)-1, which goes from -1 to +1. It is a little sharper than the signmoid due to the compression to achieve the range of -[-1, +1]. An alterantive expression for hyperbolic tang is (exp(x) - exp(-x))/ (exp(x) + exp(-x)).
+
+- Another activation function: f(x) = x if x >= 0, else 0 or max(0,x). However, this is not smooth at x = 0, though it is smooth everywhere else. The benefit of this over the step, is that the derivative isn't 0 everywhere except x = 0. This is called ReLu. It has the benefit of allowing the network to learn, but to also to forget. It is commonly used in the hidden layers of a NN.
+
+# 1.7 Types of Activation Function - Part 2
+
+ - Linear activation function. Leaky ReLU := max(0.01x, x)
+
+ - The output layer deserves, understandably, special consideration. Depending on the output, an activation function is selected. If 0 and 1 (classification problem) sigmoid can be used. If -1 or 1 then tanh
+
+ - Assume now, the output needs to be weather (Real Space). Therefore, can use linear. However, only use this for output, and not the other layers. Else it will just be a linear regression network
+
+ - There is more flexibility in the hidden layers - can use sigmoid, tanh, relu, but not linear for the reasons discussed
+
+ - If there's a multiclass output: Use Softclass that odes the following:
+ - The softmax function is often described as a combination of multiple sigmoids
+ -   (1) It takes the Zs to the exponential, thereby allowing it to have a range of 0 to
+ -   (2) Then it divides it by the sum of the exponentials on each Zi, therefore a weighted sum.
+ -   (3) At this stage, we are guaranteeed for the sum to be equal to 1.
+ -   This is important as the multiple outputs and their probabilities can equal to 1.
+
+- The word features can be used from one layer to the other.
+
+# 1.8 Training the Neural Network - Loss Function
+
+   
+
+
+
 
