@@ -52,3 +52,32 @@
 -       The +1 is to consider the bias term.
 -   The weights may also be called degrees of freedom
 -   The non-linear function: The sigmoid function forms an S-shaped graph, where x approaches infinity, the probability becomes 1, and as x approaches negative infinity, the probability becomes 0.
+
+# 1.4 MNIST Dataset
+
+- The MNIST is a dataset consisting of 60,000 training points, of 28x28 images of numbers
+- A 28x28 image is 724 inputs
+- Handwritten digits may be ambigious, and we want the neural network to allow for this ambigutiy
+- The model will not only have a node for every string of numbers, but it will also have a probability attached to it
+- The input layer is 784, the output layer is 10 (one for every digit)
+- Weights are adjusted so that the derivative of y-hat with respect to the weights, causes a output closer to y
+- Thus far, we've just talked about the single activation function - the sigmoid
+- 'Feed forward sutrcutre' is when the NN starts with the input, goes forward to the hidden, and finally output. All neurons are fully connected.
+- The activation function is non-linear because if all were linear, then we'd effectively get a linear regression, which is not interesting for our purposes
+- Upon training we can investigated
+  - Loss functions
+  - Back propagation
+  - Gradient descent, which is the right way to find the weights
+ 
+- Other Neural networks that are not feed forward
+- Overfitting and regularization
+- Solving for weights means solving a non-convex optimization problem
+- Deep Neural Netowrks are Neural Networks with many hidden layers
+
+# 1.5 Deep Learning Notations
+
+- Notation is important.
+- We use matrices and vectors to condense the linear combinations that enter the activation function
+- We can have different activation function with every layer
+- 
+
