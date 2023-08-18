@@ -115,6 +115,47 @@ There are various step functions that will be discussed here
 
 # 1.8 Training the Neural Network - Loss Function
 
+   First we define the proximity between the prediction and the actual vector. We do this through the loss function, or L(y, yhat). 
+   We can chose Avg(|yi-yhati|), thoough it runs into the problem of differentiability. As such, we resort to Avg(Y-Yhat).
+   This is not useful for classification problems. The loss function used here is 'Cross Entophy Loss Function'. This is given by
+   L(y, yhat) = -(ylog(yhat) + (1-y)log(1-yhat))
+   In this case if there are perfect predictions: y = 0; yhat = 0 - then the loss function is 0. However, if y=0 and yhat = 1 then L is negative infinity, and therefore, the loss function delivers a large loss. This is what makes this a great loss function for classification problems.
+
+# 1.9 The problem of local optimum and saddle point
+
+The goal is to minimize the loss function, given changes in the weights. For machine learning, there is no nice closed formula. Though, we can rely on first principales on looking for where the derivative, or the change is close to 0. This can also be expressed and solving for a slope of zero.
+
+We can express the loss function as a function of W, the weights. The movement towards the optimimum point, is by moving by eta times the loss-difference, where theta is small to remove aggresive movements in W. eta is called the learning rate.
+
+Now, if the gradient is zero, it doesn't tell you where to move, and that's why the step-up activation function is inadequate, and the sigmoid is more reasonable.
+
+All of this is called gradient descent.
+
+One issue with gradient descent is that it will always find te local minimum, not the global minumum. The minimum found depends on the starting point of the gradient descent. That said, local minimums are OK (not proven), thought there must be an understanding that there may be a minimum wiht a lower loss function.
+
+Given the iteration of activation functions before entering the loss function - GD is actually quite computationally complicated.
+
+# 1.10 Backpropagation
+
+Basic idea of backpropogation - is an efficient way of GD. Calculate the gradients of the last layer, which can be used for the gradients of the next gradients of the next layer and so on.
+
+Another issue with GD are the millions of gradients that need to be calcualted, along with the losses, and the iterations depending on the side of eta. We will next learn about Stochastic Gradient Descent and Backward Propogation. They are efficient implementations of gradietn descent.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
    
 
 
