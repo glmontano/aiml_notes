@@ -159,7 +159,7 @@ w^{n} = w^{n-1} - eta*g^{n}, where g^{n} = delta_{w}l(w)
 
 Introducing momentum turns the equation to
 
-w^{n} = w^{n-1} - eta(Ag^{n} + (1-A)g^{n-1})
+$w^{n} = w^{n-1} - eta(Ag^{n} + (1-A)g^{n-1})$
 
 The factor of eta is the weighted average of the current and previous delta
 
