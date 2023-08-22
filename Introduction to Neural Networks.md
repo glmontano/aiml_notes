@@ -159,7 +159,7 @@ w^{n} = w^{n-1} - eta*g^{n}, where g^{n} = delta_{w}l(w)
 
 Introducing momentum turns the equation to
 
-$w^{n} = w^{n-1} - eta(Ag^{n} + (1-A)g^{n-1})$
+$ $w^{n} = w^{n-1} - eta(Ag^{n} + (1-A)g^{n-1}) $$
 
 The factor of eta is the weighted average of the current and previous delta
 
@@ -168,27 +168,6 @@ The factor of eta is the weighted average of the current and previous delta
 We'll start by learning about adaptive learning rates. We want eta to get smaller and smaller as we approach a local minima. Another important consideratoin is that non-linear surfaces dont' look the same in different dimensions. Therefore, we need differnt learning rates for each dimensions.
 
 AdaGrad: 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    
    
 
