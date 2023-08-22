@@ -155,19 +155,21 @@ It accelerates the gradient descent algorithm by considering the exponentially w
 
 Stochastic gradient descent with momentum, empirically, works very well. Recall that the normal relationship in weight optmization is 
 
-w^{n} = w^{n-1} - eta*g^{n}, where g^{n} = delta_{w}l(w)
+$w^{n} = w^{n-1} - \eta*g^{n}, where g^{n} = delta_{w}l(w)$
 
 Introducing momentum turns the equation to
 
-$w^{n} = w^{n-1} - eta(Ag^{n} + (1-A)g^{n-1})$
+$w^{n} = w^{n-1} - \eta(Ag^{n} + (1-A)g^{n-1})$
 
 The factor of eta is the weighted average of the current and previous delta
 
 # 2.2 Other variants of Gradient Descent
 
-We'll start by learning about adaptive learning rates. We want eta to get smaller and smaller as we approach a local minima. Another important consideratoin is that non-linear surfaces dont' look the same in different dimensions. Therefore, we need differnt learning rates for each dimensions.
+We'll start by learning about adaptive learning rates. We want eta to get smaller and smaller as we approach a local minima. Another important consideration is that non-linear surfaces don't look the same in different dimensions. Therefore, we need different learning rates for each dimension.
 
-AdaGrad: 
+AdaGrad that includes a learning rate that adapts in every iteration is given by
+
+$$w^{n} = w^{n-1} - 2\frac{\eta}{\sqrt{s} + \varepsilon}g^{n}$$
    
    
 
