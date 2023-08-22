@@ -167,11 +167,15 @@ The factor of eta is the weighted average of the current and previous delta
 
 # 2.2 Other variants of Gradient Descent
 
-We'll start by learning about adaptive learning rates. We want eta to get smaller and smaller as we approach a local minima. Another important consideration is that non-linear surfaces don't look the same in different dimensions. Therefore, we need different learning rates for each dimension.
+We'll start by learning about adaptive learning rates. We want $\eta$ to get smaller and smaller as we approach a local minima, and conversely - larger when further away from it. Another important consideration is that non-linear surfaces don't look the same in different dimensions. Therefore, we need different learning rates for each dimension.
+
+Adaptive learning rates is key.
+
+## AdaGrad
 
 AdaGrad that includes a learning rate that adapts in every iteration is given by
 
-$$w^{n} = w^{n-1} - \eta\frac{\eta}{\sqrt{s} + \varepsilon}g^{n},$$
+$$w^{n} = w^{n-1} - \frac{\eta}{\sqrt{s} + \varepsilon}g^{n},$$
 
 where $$s = \Sigma_{n}\left(g^{n}\right)^{2}.$$
 
@@ -179,23 +183,29 @@ The $\varepsilon$ is added to protect the denominator from being zero. Note that
 
 Another thing to note is that $\eta$ is specific to the dimension being optimized ($w$). There will be a different $eta$ for each dimension, as previously stated.
 
-AdaGrad works well for stochastic gradient descent on convex surfaces. However, should it be applied on complex non-convex surfaces, then AdaGrad's performance decreases.
+AdaGrad works well for stochastic gradient descent on convex surfaces. However, should it be applied on complex non-convex surfaces, then AdaGrad's performance decreases. Furthermore, there is the risk that with many iterations the learning rate apporaches zero, and no further learning is initiated. At the worst case - no local minima is reached.
 
 ## RMSProp
 
-RMSPropr is another method, and superior to AdaGrad in complex non-convex surfaces. It acknowledges that the adaptive nature of the earning rate is too aggresive. Instead of working with sum of squares - it utilises the moving average. Formulating this
+RMSProp is another method, and superior to AdaGrad in complex non-convex surfaces. It acknowledges that the adaptive nature of the earning rate is too aggresive. That is, it solves the vanishing gradient problem. Instead of working with sum of squares - it uses the exponetnially decaying running average, or the weighted average of gradients in the denominator. Formulating this
 
 $$w^{n} = w^{n-1} - \eta\frac{\eta}{\sqrt{s^{n}} + \varepsilon}g^{n},$$
 
 where $$s^{n} = ps^{n-1}+(1-p)(g^{n})^{2}.$$
 
-In this case, there is an exponetial moving average of the gradient squares. The last $s$ has the highest, and the weights on the gradients decreases with the number of iterations.
+$p$ isthe moving average parameter, and default value of `0.9` may be used. This means that 90% of divider will some from the recent $s^{n-1}$, and 10% from $(g^{n})^{2}$.
+
+The last $s$ has the highest weight, and the weights on the gradients decreases with the number of iterations. If the expectation is that the gradients decreases with iterations, then the previous gradients have a higher weight then the prompt, weighted those smaller gradients less.
 
 ## Adam
 
-Adam stans for Adaptive Moments. It considers two main characteristics. First the RMSProp, and specifically the decaying nature of $s$ that affects the learning rate. Second, it works with momentum to reduce the risk of landing on a local minimum.
+Adam stans for Adaptive Moment Estimation. It considers two main characteristics. First the RMSProp, and specifically the decaying nature of $s$ that affects the learning rate. Second, it works with momentum to reduce the risk of landing on a local minimum.
 
-In summary `Adam = (RMSProp) + (SGD with Momentum)`. This is considered the most useful deep learning technique, and has been around since 2014.
+In summary `Adam = (RMSProp) + (SGD with Momentum)`. This is considered the most useful deep learning technique, and has been around since 2014. This is infused in the equation via
+
+$$w^{n} = w^{n-1} - \eta\frac{\eta}{\sqrt{s^{n}} + \varepsilon}\left(\gamma g^{n} + (1-\gamma)g^{n-1}\right),$$
+
+where $$s^{n} = ps^{n-1}+(1-p)(g^{n})^{2}.$$ The scaler in the numerator, if you will, has a momentum factor, and the momentum parameter in $\gamma$.
 
 ## Caveat of Adam
 
