@@ -165,6 +165,11 @@ The factor of eta is the weighted average of the current and previous delta
 
 # 2.2 Other variants of Gradient Descent
 
+We'll start by learning about adaptive learning rates. We want eta to get smaller and smaller as we approach a local minima. Another important consideratoin is that non-linear surfaces dont' look the same in different dimensions. Therefore, we need differnt learning rates for each dimensions.
+
+AdaGrad: 
+
+
 
 
 
