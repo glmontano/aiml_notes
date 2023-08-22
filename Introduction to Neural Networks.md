@@ -141,6 +141,35 @@ Basic idea of backpropogation - is an efficient way of GD. Calculate the gradien
 
 Another issue with GD are the millions of gradients that need to be calcualted, along with the losses, and the iterations depending on the side of eta. We will next learn about Stochastic Gradient Descent and Backward Propogation. They are efficient implementations of gradietn descent.
 
+# 2.1 SGD with Momentum
+
+The optimization problewm is non-convex, and there are local minima to consider.
+
+There is a very high chance to be caught in a local-minima. However, for many cases we do not need to find ther global minima. There is evidence that this may be overfit, and therefore it is OK. Though, it is supoer complicated oto find it.
+
+Finding the right learning rate, eta, is also important. Also, learning rates should not be the same for every dimensioin, or in the determination  of the weights. Therefore, adaptation is also important.
+
+Gradient descent, loosely speaking is falling to the local minimum. Momentum may be added in attempts to find a better optimum. This is at a cost of speed of convergence.
+
+It accelerates the gradient descent algorithm by considering the exponentially weighted average of the gradients.
+
+Stochastic gradient descent with momentum, empirically, works very well. Recall that the normal relationship in weight optmization is 
+
+w^{n} = w^{n-1} - eta*g^{n}, where g^{n} = delta_{w}l(w)
+
+Introducing momentum turns the equation to
+
+w^{n} = w^{n-1} - eta(Ag^{n} + (1-A)g^{n-1})
+
+The factor of eta is the weighted average of the current and previous delta
+
+# 2.2 Other variants of Gradient Descent
+
+
+
+
+
+
 
 
 
