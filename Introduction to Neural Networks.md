@@ -145,7 +145,9 @@ Another issue with GD are the millions of gradients that need to be calcualted, 
 
 The optimization problewm is non-convex, and there are local minima to consider.
 
-There is a very high chance to be caught in a local-minima. However, for many cases we do not need to find ther global minima. There is evidence that this may be overfit, and therefore it is OK. Though, it is supoer complicated oto find it.
+There is a very high chance to be caught in a local-minima. However, for many cases we do not need to find ther global minima. There is evidence that this may be overfit, and therefore it is OK. Though, it is super complicated to find it.
+
+## AdaGrad
 
 Finding the right learning rate, eta, is also important. Also, learning rates should not be the same for every dimensioin, or in the determination  of the weights. Therefore, adaptation is also important.
 
@@ -169,7 +171,38 @@ We'll start by learning about adaptive learning rates. We want eta to get smalle
 
 AdaGrad that includes a learning rate that adapts in every iteration is given by
 
-$$w^{n} = w^{n-1} - 2\frac{\eta}{\sqrt{s} + \varepsilon}g^{n}$$
+$$w^{n} = w^{n-1} - \eta\frac{\eta}{\sqrt{s} + \varepsilon}g^{n},$$
+
+where $$s = \Sigma_{n}\left(g^{n}\right)^{2}.$$
+
+The $\varepsilon$ is added to protect the denominator from being zero. Note that as the number of iterations increase, or as the change in gradients increases, $s$ becomes large and therefore the $\eta$ is divided by a larger another, and the coefficient of $g^{n}$ becomes smaller. This represents the adapative nature of the AdaGrad.
+
+Another thing to note is that $\eta$ is specific to the dimension being optimized ($w$). There will be a different $eta$ for each dimension, as previously stated.
+
+AdaGrad works well for stochastic gradient descent on convex surfaces. However, should it be applied on complex non-convex surfaces, then AdaGrad's performance decreases.
+
+## RMSProp
+
+RMSPropr is another method, and superior to AdaGrad in complex non-convex surfaces. It acknowledges that the adaptive nature of the earning rate is too aggresive. Instead of working with sum of squares - it utilises the moving average. Formulating this
+
+$$w^{n} = w^{n-1} - \eta\frac{\eta}{\sqrt{s^{n}} + \varepsilon}g^{n},$$
+
+where $$s^{n} = ps^{n-1}+(1-p)(g^{n})^{2}.$$
+
+In this case, there is an exponetial moving average of the gradient squares. The last $s$ has the highest, and the weights on the gradients decreases with the number of iterations.
+
+## Adam
+
+Adam stans for Adaptive Moments. It considers two main characteristics. First the RMSProp, and specifically the decaying nature of $s$ that affects the learning rate. Second, it works with momentum to reduce the risk of landing on a local minimum.
+
+In summary `Adam = (RMSProp) + (SGD with Momentum)`. This is considered the most useful deep learning technique, and has been around since 2014.
+
+## Caveat of Adam
+
+All these methods are called ad-hoc tecniques, as there is no theorem surrounding their performance, only empirical evidence.
+
+While Adam is incredibly fast, it has been observed that it will find worse local minima compared to SGD with momentum. while this has been considered, the benefits of speed outweights the mentioned costs.
+
    
    
 
