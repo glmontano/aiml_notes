@@ -213,7 +213,9 @@ All these methods are called ad-hoc tecniques, as there is no theorem surroundin
 
 While Adam is incredibly fast, it has been observed that it will find worse local minima compared to SGD with momentum. while this has been considered, the benefits of speed outweights the mentioned costs.
 
-   
+# 2.3 Weight initialization and its Techniques
+
+
    
 
 
