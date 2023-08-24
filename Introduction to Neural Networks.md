@@ -239,4 +239,4 @@ $$w_{i, j} ~ N\left(0, \frac{1}{n}\right).$$
 
 Consider a ReLu Activation Function that is not symmetric, and gives learning to where the domain is greater than zero. With some mathematical proof aiming to (i)  Keeping the variance betwee layers constant, the behavior of the ReLu funciton in $max(0, x)$, the distribution of the weights is given by
 
-$$w_{i, j} ~ N\left(0, \frac{2}{n}\right).$$
+$$w_{i, j} \tilde N\left(0, \frac{2}{n}\right).$$
