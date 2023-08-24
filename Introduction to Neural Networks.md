@@ -215,6 +215,10 @@ While Adam is incredibly fast, it has been observed that it will find worse loca
 
 # 2.3 Weight initialization and its Techniques
 
+The weight optimization process is an automatic method of changing weights to lower the loss function. However, there requires a starting point or the weight initialisation.
+
+Weight initialisation was not though to be important until further work was done in this space, and with this, bounds on where to initialize from.
+
 
    
 
