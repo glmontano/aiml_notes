@@ -215,13 +215,28 @@ While Adam is incredibly fast, it has been observed that it will find worse loca
 
 # 2.3 Weight initialization and its Techniques
 
-The weight optimization process is an automatic method of changing weights to lower the loss function. However, there requires a starting point or the weight initialisation.
+The weight optimization process is the automatic process of changing weights to lower the loss function. However, there requires a starting point or the weight initialisation.
 
-Weight initialisation was not though to be important until further work was done in this space, and with this, bounds on where to initialize from.
+Initially, weight initialisation was not thought to be important until further work unveiled that focus on such a matter leads to different rates of convergences and the local minima achieved.
 
+Examples to demonstrate the importance are extremes on the Activation Function. Consider the Sigmoid Function, that _tails_ off at the end, and a inflexion point at 0. Should all weights be initialized at zreo, or a larger number, then the rate of change on these functions will be very small, and so will the learning. Conversly, picking a number closer to the inflexion point will lead to more suitable learning. Said differently, the optimization algorithm requires some asymmetry in the error gradient to begin the optimization effectively.
 
-   
+The type of initialization to use will depend on the Activaiton Function
 
+## Xavier Initialization (XI)
 
+Xavier Initialization is used for non-linear Actionvation Functions such as the Sigmoid or Tanh. XI states that
 
+$$w_{i, j} ~ U\left(-\frac{1}{\sqrt{n}}, -\frac{1}{\sqrt{n}}\right),$$
 
+where $n$ is the number of nodes in the previous layer. Looking at the distribution - it aims to not initialize from very small or larger numbers. 
+
+While this works OK, it has undergone variations such as
+
+$$w_{i, j} ~ N\left(0, \frac{1}{n}\right).$$
+
+## He Initialziation (HI)
+
+Consider a ReLu Activation Function that is not symmetric, and gives learning to where the domain is greater than zero. With some mathematical proof aiming to (i)  Keeping the variance betwee layers constant, the behavior of the ReLu funciton in $max(0, x)$, the distribution of the weights is given by
+
+$$w_{i, j} ~ N\left(0, \frac{2}{n}\right).$$
