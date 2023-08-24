@@ -227,16 +227,16 @@ The type of initialization to use will depend on the Activaiton Function
 
 Xavier Initialization is used for non-linear Actionvation Functions such as the Sigmoid or Tanh. XI states that
 
-$$w_{i, j} ~ U\left(-\frac{1}{\sqrt{n}}, -\frac{1}{\sqrt{n}}\right),$$
+$$w_{i, j} \sim U\left(-\frac{1}{\sqrt{n}}, -\frac{1}{\sqrt{n}}\right),$$
 
 where $n$ is the number of nodes in the previous layer. Looking at the distribution - it aims to not initialize from very small or larger numbers. 
 
 While this works OK, it has undergone variations such as
 
-$$w_{i, j} ~ N\left(0, \frac{1}{n}\right).$$
+$$w_{i, j} \sim N\left(0, \frac{1}{n}\right).$$
 
 ## He Initialziation (HI)
 
 Consider a ReLu Activation Function that is not symmetric, and gives learning to where the domain is greater than zero. With some mathematical proof aiming to (i)  Keeping the variance betwee layers constant, the behavior of the ReLu funciton in $max(0, x)$, the distribution of the weights is given by
 
-$$w_{i, j} \eq N\left(0, \frac{2}{n}\right).$$
+$$w_{i, j} \sim N\left(0, \frac{2}{n}\right).$$
