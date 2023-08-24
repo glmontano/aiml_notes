@@ -240,3 +240,83 @@ $$w_{i, j} \sim N\left(0, \frac{1}{n}\right).$$
 Consider a ReLu Activation Function that is not symmetric, and gives learning to where the domain is greater than zero. With some mathematical proof aiming to (i)  Keeping the variance betwee layers constant, the behavior of the ReLu funciton in $max(0, x)$, the distribution of the weights is given by
 
 $$w_{i, j} \sim N\left(0, \frac{2}{n}\right).$$
+
+
+# 2.4 Regularization
+
+Recall that in terms of the content within data, it can be said that
+
+$$\text{Data}:= \text{Information} + \text{noise}.$$
+
+Models that are two simple will comtain little to no noise, and little information, and underperform in predictions. Complicated models will do well in capturing information, but will also capture too much noise, thereby performing poorly against a test dataset. In this case - the model overfits the data and this may also lead to predictions in noise, and not just the information itself.
+
+The right model is one that is between too simple and too complex. It captures the right amount of information, with little to no noise.
+
+This relationship from simple to complex can be explained by the number of parameters in that model. Simple models will have a small number of parameters (think of a linear equation), whereas a complicated model will have a large number of paramters (think of a multi-degree polynomial). The degrees of freedom allows parameters to move around, thereby allowing for the capturing of information, but also noise.
+
+Coming back to Neural Networks - the number of paramters is large due to the number of layers and the number of nodes in each layer. As such, Neural Networks are prone to being classified as a complicated model, and overfitting the data. As such, methods to reduce the complexity to an adequate level is required.
+
+Regularization is the method of reducing the complexity of the model after a first round of optimzation has occurred. It is sometimes called Shrinkage. 
+
+## L1 or L2 Regularization
+
+L1 and L2 Regularization techniques can be used for all machine and deep learning techniques.
+
+L1 is called Larso Regularization, and L2 - Ridge Regularization.
+
+The technique works by appending to optimization of the Loss function, a penalty term. Speaking loosely the minimization expression is now
+
+$$\min_{w} L\left(y,\hat{y}\right) + \text{Penalty Term}.$$
+
+If L1 then
+
+$$\text{Penality Term} = \frac{\lambda}{2m}\sum|w_{i}|.$$
+
+If L2 then
+
+$$\text{Penality Term} = \frac{\lambda}{2m}\sum(w_{i})^{2}.$$
+
+Lasso will result in some weights being zero and therefore dropping them. Ridge will not lead to zero weights, though, it will make them extremely small, having a similar effect of dropping weights.
+
+Lasso is better in terms of explainability in linear regressions. Ridge is better for complicated networks for predictability.
+
+## Data Augmentation
+
+Data Augmentation is another method for regularization. It relies on using prior knowledge, or the existing data set, and appends the data with variations of it. These variations are large enough to introduce noise, but does not change the class label or value. This effectivey reduces the generalization error.
+
+With respect to eh MNIST data set of images - Data Augmentation can involve the following variants
+
+  - Adding noise to the image
+  - Rotation
+  - Cropping
+  - Shifts
+  - Mirroring
+  - Color adjustments
+  - Generative Adverserial Network - to create new images
+
+# 2.5 Dropout
+
+Dropout is another regularization technique. It works by training multiple subsets of nodes in a layer. Let the probability of a node being in a subset be 50%. With this, multiple subsets of a layer are selected, and trained independently of other subsets. As an analogy, this has the effect of focusing training on nodes of the subsets, rather than the entire layer or 'class/team' of players.
+
+Dropout is the term used as some nodes are dropped out during the mini-batch training process.
+
+Once training is complete - the testing stage must consider all results of the dropbox regularization, or all mini-batches. This is done in two ways
+
+  1. Scaling the weights by the probability of retention described above.
+  2. Scaling the optimized weights at the stage of training, before testing is done as an aggregation. This is called Inverse Dropout.
+
+Empirically, the probability of retention for hidden layers is best served by 50%. For the input layer, it should be close to 100%, such as 80%.
+
+# 2.6 Batch Normalization
+
+
+
+
+
+
+
+
+
+
+
+
