@@ -284,7 +284,7 @@ Lasso is better in terms of explainability in linear regressions. Ridge is bette
 
 Data Augmentation is another method for regularization. It relies on using prior knowledge, or the existing data set, and appends the data with variations of it. These variations are large enough to introduce noise, but does not change the class label or value. This effectivey reduces the generalization error.
 
-With respect to eh MNIST data set of images - Data Augmentation can involve the following variants
+With respect to the MNIST data set of images - Data Augmentation can involve the following variants
 
   - Adding noise to the image
   - Rotation
@@ -309,14 +309,18 @@ Empirically, the probability of retention for hidden layers is best served by 50
 
 # 2.6 Batch Normalization
 
+Batch Normaliation is another regularization technique used in Deep Learning. The motivation is to treat the changing variance of incoming results to each node due to different mini-batches or epochs in the weight-optimization process. For example, consider the input data that goes through various hidden layers with processed weight and an activation function. At various stages - the distribution of values will change, introducing noise and presenting difficulties in learning or convergence. This effect is known as **Internal Covariate Shift**, defined as: The change in the distribution of network activations due to the change in network parameters during training.
 
+Batch Normalization works by restributing the values to have a mean of 0 and variance of 1. This is similar to the scaling that occurs at the beginning, where the inputs have the same statistics.
 
+There are two instances in which this can happen.
 
+  1. Post-Activation Normaliation: Normalize the output from the last layer
+  2. Pre-Activation Normalization: Normalize the input from the last layer.
 
+Typically, BN is performed on the output from a hidden layer (Post-Activation).
 
+One final note is that since the output must be in terms of the value to be predicted - BN is not applied at this stage.
 
-
-
-
-
+# 2.7 Types of Neural Networks
 
