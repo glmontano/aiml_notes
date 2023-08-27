@@ -324,3 +324,35 @@ One final note is that since the output must be in terms of the value to be pred
 
 # 2.7 Types of Neural Networks
 
+We've learnt about various neural networks and there characteristics. This includes
+
+- Feed Forward NN: The ones we've seen
+-   - Multi-layer perceptrons
+    - Convulational NN
+- Recurrent NN
+-   Long-short term memory NN
+
+- Deep Learning Networks: A NN with many layers.
+
+A Feed-Forward Neural Network flows the inputs and outputs forward, with no instance of data feeding back to a previous layer. If there is a single hidden layer - then the NN is called a single-layer perceptron, if there are multiple layers then it is a multi-layers peceptrons, and if there are a large number of layers then it is a deep learning network.
+
+## Convolutional Neural Networks
+A Convolutional Neural Networks are popular in image recognition. At a high leve it works by mapping subset of an image to a neuron, though, another overlapping subset will be mapped to another neuron. The effective overlapping of the neurons, or the convolution of mappings and neurons maintains the spacial information of an image. This all happens on a single layer. This is also a feed-forward neural network.
+
+The next layer will go through a similar convolutional layer, before entering a final normal neurol network.
+
+This stucture maintains feautures in the best fashion possible.
+
+## Recurrent Neural Network
+
+These networks are used for time-series, where previous knowledge is important for future predictions. In this case - the input into a node is equal to the weight-linear combination of the previous inputs, with the weight-linear combination of the current inputs.
+
+Using infomration from the past is known as a Recurrent Neural Network. Furthermore, this networkl is considered to have short-term memory.
+
+## Long-Short Term Memory Networks
+
+In this case, a node is replaced with a complicated structure to one that has memory in it. The neuron will learn how much memory to keep, which is determined in a weighted fashion.
+
+## Generalized Adversarial Network
+
+Two networks convolutional netowkr sowkring with eachother. One netowrk's role is to create, the second is to check it (discriminator).
