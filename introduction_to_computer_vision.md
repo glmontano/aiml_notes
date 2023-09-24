@@ -32,6 +32,46 @@ The pooling layer looking at subsets of the data to extract features, and looks 
 
 CNNs also have a computational advantage. For an RGB 50x50 image, and ANN would rely on 50x50x3=7500 trainable parameters. CNNs however may use 10 sets of 3x3 kernels (the 10 is called a filter in this case). Each kernel is responsible for identifiying a feature. Further one will exist for each R, G and B though the number of inputs in this case is (3x3x3+1)x10 = 280 trainable parameters. Kernels therefore reduce dimensionality.
 
+# 1.2 CNN Architecture
+
+A CNN can be viewed as two stages.
+
+(1) Feature Extraction Satge
+(2) Prediction Stage
+
+### Prediction Stage
+
+For simplicity - the Prediction Stage is a simple ANN, and is all that we've learn so far about neural networks. The input here is a flattened repreesntation of the iamge from the Feature Extraction Stage. Thereafter, fully connected layers lead to the classification of the image. In the case of identifying whether an image is a cat - it is True or False (perhaps a dog).
+
+### Feature Extraction Stage
+
+This is the new stage for the CNN, containing the Convolution and Pooling layers.
+
+Convolution layers identify features of the image, and pooling to simplify outputs and less sensitive to locations. There may be multiple convolution and pooling layers. Once the features are deemed to be well extracted - they may enter the Prediction Stage or the ANN.
+
+## The Convolutional Layer
+
+Here, we revisit how the convulational layer works. It can be seen as a process where
+- a filter or kernel is established. This has a dimension less then that of the image
+- it is applied multiple times across the image, before a multiplicative process is applied
+- The result of the multiplicaiton process, at each filter application, makes an output
+
+The values of the filter are weights or trainable parameters, that are optimized using gradient descent.
+
+The output then enters a ReLu activation function. This is deemed the best function as it makes negative numbers 0, and this is useful as negative numbers don't exist in PixEls.
+
+## Pooling
+
+The next step in Feature Extraction is Pooling. The pooling layer helps removing unwanted features from the image, thereby reducing the size of the image and the computational cost.
+
+Pooling works by scanning through subsets of the feature map, and taking either the maximum, minimum or average. Of course, this means loss in information. However, for the purpose of feature extraction - we are OK in loosing immaterial pieces of information such as, multiple pixels of fur and so on. Perhaps, there're redundant pieces of information in classifying an image.
+
+Pooling also helps with Spatial Invariance. It looks for cats in various sections of the image. Lastly, taking only pieces of information improve computational power, but also overfitting.
+
+## Flatten Layer
+
+All the columns of the output matrices are flattend into a single column, before entering the ANN.
+
 
 
 
