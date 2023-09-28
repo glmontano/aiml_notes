@@ -77,11 +77,31 @@ All the columns of the output matrices are flattend into a single column, before
 Recall that overfitting is the result of a model incorporating both a training dataset's information and noise, therefore resulting in poor performance in out-of-sample or testing data sets. This is also described as the model overgeneralizing on the training dataset or `overfitting`. This fault also appears in the calibration of parameters in a CNN.
 
 As previously learnt - `regularization` is the processs of reducing overfitting, and will be studied in the context of CNNs. There are three techinques here
+
 1. Data Augmentation
 2. Batch Normalization
 3. Spatial Dropout
 
-4. 
+## Data Augmentation
+
+Consider an image of a cat with ears in a fixed orientation. A CNN with a particular filter learning off this image may deduce that such ears in the said orientation is the feature. However, a cat may have different orientations depending on whether it is standing or laying down, passing the orientations to the ears. The CNN learning off a single orientation will overfit on the training data, and may perform poorly on a set of testing data with cats in different orientations.
+
+Data augmentation works by augmenting the original data set with rotations of existing data. Taking the example of a cat in a speicif orientation - one would rotate the same image, therefore changing the orientation and feeding it into the training process.
+
+The rotation example about is only one form of data augmentation. Other augmentation techniques include
+
+1. Geometric transformations - Randomly flipping, cropping rotating or translating
+2. Mixing images - Combining different images. Two methods are `pixel averaging` qand `crop overlaying`
+3. Color space transormations - Changing brightness and contrast, chaning RGB color channels, intesify any color
+4. Random erasing - Deletes parts of the initial iamges thereby forcing the model to focus on the entire image rather than a portion of it. Inspiring by Dropout method of the ANN.
+5. Kernel filters - Used to sharpen or blur images using filters.
+
+One advantages of data augmentation is that htey can all be all mentioned techniques may be done simultaneously.
+
+## Batch Normalization
+
+Batch normalziation is a technique originally learnt that can also be applied to CNNs. To recall - Batch Normalization sacles or normalizes a layer's output to a specific scale, and one where the variance of the output is small (take 1 in the case of the standard normal distribution). 
+
 
 
 
