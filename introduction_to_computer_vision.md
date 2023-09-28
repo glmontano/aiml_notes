@@ -72,6 +72,16 @@ Pooling also helps with Spatial Invariance. It looks for cats in various section
 
 All the columns of the output matrices are flattend into a single column, before entering the ANN.
 
+# 2.1 Regularization in CNN's
+
+Recall that overfitting is the result of a model incorporating both a training dataset's information and noise, therefore resulting in poor performance in out-of-sample or testing data sets. This is also described as the model overgeneralizing on the training dataset or `overfitting`. This fault also appears in the calibration of parameters in a CNN.
+
+As previously learnt - `regularization` is the processs of reducing overfitting, and will be studied in the context of CNNs. There are three techinques here
+1. Data Augmentation
+2. Batch Normalization
+3. Spatial Dropout
+
+4. 
 
 
 
