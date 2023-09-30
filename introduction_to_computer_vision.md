@@ -100,7 +100,7 @@ One advantages of data augmentation is that htey can all be all mentioned techni
 
 ## Batch Normalization
 
-Batch normalziation is a technique originally learnt that can also be applied to CNNs. To recall - Batch Normalization sacles or normalizes a layer's output to a specific scale, and one where the variance of the output is small (take 1 in the case of the standard normal distribution). 
+Batch normalziation is a technique originally learnt that can also be applied to CNNs. To recall - Batch Normalization scales or normalizes a layer's output to a specific scale, and one where the variance of the output is small (take 1 in the case of the standard normal distribution). 
 
 
 
