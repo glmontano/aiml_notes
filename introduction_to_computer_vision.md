@@ -100,7 +100,54 @@ One advantages of data augmentation is that htey can all be all mentioned techni
 
 ## Batch Normalization
 
-Batch normalziation is a technique originally learnt that can also be applied to CNNs. To recall - Batch Normalization scales or normalizes a layer's output to a specific scale, and one where the variance of the output is small (take 1 in the case of the standard normal distribution). 
+Batch normalziation is a technique originally learnt that can also be applied to CNNs. To recall - Batch Normalization scales or normalizes a layer's output to a specific scale, and one where the variance of the output is small (take 1 in the case of the standard normal distribution).
+
+In the case of CNNs, it is also used to deal with `internal covariate shift`, where the distribution of inputs differs in different layers. This can create issues in training, including convergence delays.
+
+A concrete example may include data that originally has white pixels, though after changes in the distribution, lead to figures with orange pixels.
+
+As originally tauught - Batch Normalization standardizes the activations of each input variable per mini-batch, which means that during the weight update, the assumptions made by the subsequent layer regarding the spread and distribution of inputs will not alter drastically. Under similar distributions - training is more efficient and faster.
+
+Furthermore, BN provides a weak form of regularization (reducing overfitting). Since BN is performed on mini-batches - it adds noise to the data, which results in regularization.
+
+## Spatial Dropout
+
+As with BN - the concept of Dropout was covered where neurons in a layer a dropped according a dropout-ratio. In CCNs - dropping out pixels would not be as effective due to the connectivity or correlations between pixels within a small neighborhood. As such - an altered version of dropout - `spatial dropout` is used instead.
+
+In `spatial dropout` the pixels/cells/results from a filter map are effectively dropped out by making those results zero. For example, say 8 filter maps exist with a dropout-ratio of 0.25. Then, 2 filter maps will be randomly dropped by making the results of those filter maps zero.
+
+# 2.2 Introduction to Transfer Learning
+
+Ideally - we want CCNS with
+
+- low bias
+- low variance
+- positive modelling performance in recall, precision and F1-score
+
+To achieve this we required - a large, diverse and high-quality "labeled" image dataset. Furthermore, high computational power to train deep convolutional neural networks for complex images.
+
+This is a lot easier to spell out, then executre.
+
+## The first problem
+
+Obtaining a large and diverse image dataset may be difficult due to cost, rareness, privacy and so on. Data augmentation cannot always be used as training images need to be diverse, meaningful and of high quality.
+
+# The second problem - The computational cost of training deep CNNS
+
+There are large computational costs associated with training CNNs. Training requires both performance and minimal latency. Requirements may include using high-quality GPUs, cloud computing resources, and other ideas from accelerated computing hardware.
+
+However, all of this is expensive to acquire and may not always be feasible for individual deep learning practitioners or algorithmin researchers.
+
+## The solution - Transfer Learning
+
+Transfer Learning is a way of achieving a solution. It using the parameteres from a high-quality model, and apply them to your task at hand, and fine-tuning the model for your requirements. This has the benefit of *transferring the knowledge* from an high quality model to the task at hand.
+
+
+
+
+
+
+
 
 
 
