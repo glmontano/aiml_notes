@@ -23,4 +23,6 @@ A vocabularly is jargon in this vectorization representing the set of unique wor
 
 # 1.2 Vectorization Techniques
 
+## Bag of Words (BoW)
 
+BoW works by initializing a vector on a sentence by counting the occurence of each word. For example `I like cats do, do you like cats?` whas the vector `[i, like, cats, do, you] => [1, 2, 2, 1, 1]`. While this is a simple vectorization method, it doesn't capture the relationships between words.
