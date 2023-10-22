@@ -100,7 +100,7 @@ Here, human based rules are set for the classifcation. For example headlines or 
 
 These rules are human comprehensible and can be improved over time. However, these are time consuming since generating such rules for a complex system can be quite challenging and require lengthy analysis and testing. Furthermore, they are difficult to maintian and may not scale well. Finally, new rules may conflict with existing rules creating further complications. 
 
-## Machinea Learning Based
+## Machine Learning Based
 
 This method first requires historical data to be trained on. Classifcations are based on past observations and extracted features from the text and tags/labels of that text are used in training. With enough training ML models can make accurate predictions.
 
@@ -121,8 +121,25 @@ Two methods for sentiment analysis are
 1. TextBlob - NaiveBayesAnalyzer returns either positive, negative, and the probability of positivity/negativity
 2. VADER - Rules based and used especially in social media. Uses dictionary that maps the lexical features (word frequency, word neighborhood count and word associations, etc) to the intensity of emotions known as sentiment scores. Uses `SentimentIntensityAnalyzer` class. The output is a dictionary with 4 keys: NEgative, neutral, positive and a compound representing the emotional intensity.
 
+# 1.6 Sentiment Analysis - Hands On
 
+# 1.7 Dense Encoding
 
+First - we recall sparse vectors and matrices which are simply structures with a pertinent number of zeroes. Recall that these appear in the counting methods of vectorization in BoW and TF-IVF. When scaled with thousands of zeros and high dimensions, training may resuilt on poor model accuracy, and be computationally expensive to do so.
+
+## Solving Sparseness with Dense Encodings
+
+Dense encodings is a method that reduces the dimensionality of vectors, reducing the the vector size and therefore sparseness. Furthrermore, dense vectors also represent the semantics of the text.
+
+Machine learning models are used to generate dense vectors including
+
+1. Word2Vec -> CBOW and Skip-gram
+2. GloVe
+3. FastTExt
+
+There are also neural network models such as BERT and CoVE which are fast, efficient to train and provide high performance.
+
+# 1.8 Word2Vec
 
 
 
