@@ -141,6 +141,43 @@ There are also neural network models such as BERT and CoVE which are fast, effic
 
 # 1.8 Word2Vec
 
+# 2.1 Introduction to Sequential Models
+
+NLP using machine learning has 3 steps
+- Proprocessing
+- Feature extraction
+- Modelling
+
+So far, human designs in Bag of Words and TF-IDF led to feature extraction.
+
+However, deep learning has progressed and may be a more powerful means of obtaining features.
+
+One important point is that the embedding layer turns each word into a fixed-length vector of a specific size with 0s and 1s. This improves the processing of words and reduces dimensionality
+
+Text data is known as sequential data, where the data has meaning through the given sequence of words. Other forms of sequential data include audio, video and time series. Change the sequence of the data will change the meanings and classifications.
+
+Normal neural networks or ANN cannot be used for sequential data as they do not hold information of the sequence of data. As such, alternative are required. There are different neural netork models
+  - RNN
+  - LSTM
+
+## Recurrent Neural Network (RNN)
+
+RNNs activation fucntion has an additional connection pointing backwords, therefore transferring information backwords. This information is short-term memory. This allows the network to remember the neuron's previous value, and can pass it onto themselves in the future.
+
+## Long Short-Term Memory
+
+Similar to RNNs, though it has long term dependencies. It has a memory cell that can sotre information in memory for long periods.
+
+This architecture allows LSTMs to converge faster while training and provides better performance compared to RNNs.
+
+# 2.2
+
+
+
+
+
+
+
 
 
 
