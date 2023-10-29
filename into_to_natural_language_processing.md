@@ -195,3 +195,9 @@ Some limitations include
 
 This however is quickly identifed and solved using LSTM networks.
 
+# 2.3 Introductionm to LSTMs
+
+LSTM or 'Long Short-Term Memory' is a type of RNN used in sequential data prediction. It addresses the short-term memory issue commonly found in RNNs. While RNNs have short-term memory, it doesn't extend for the period of time required for certain predictions. LSTM closes this shortfall.
+
+LSTM also solve the vanishing and exploding gradient problems with traditional RNNs. This is done by discarding irrelevant data and information within the network.
+
