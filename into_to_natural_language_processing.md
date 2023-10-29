@@ -170,14 +170,28 @@ Similar to RNNs, though it has long term dependencies. It has a memory cell that
 
 This architecture allows LSTMs to converge faster while training and provides better performance compared to RNNs.
 
-# 2.2
+# 2.2 Introduction to RNNs
 
+RNNs or Recurrent Neural Networks are named as such, as they perform the same recurring task for each element in a sequence, with the outcomes based on prior computations. RNNs can be viewed as having memory, that stores information about these prior computations.
 
+## Advantages of RNNs
+Advantages of RNNS over ANNS include
+1. Suitability for sequential data, as RNNs process the entire sequence. ANNs do not have the ability to store hidden states or sequential information.
+2. RNNs are unbounded to the size of the input, making RNNs more generalizable on text where the size of the input is not fixed.
+3. RNNs use shared parameters/weights, thereby reducing the computational requirements on calculating the number of parameters that the model needs to learn while training.
 
+## Types of RNNs
+Another benefit of RNNs is the ability to modify it for the purpose of solving different classes of sequential data problems. There are 4 main typers of RNN architecutres that can be used. They are
+1. One to One: Single input -> single output. E.g. Binary classification problem; traditional artificial network
+2. One to Many: One input -> many outputs. E.g. One word to generate a sequence; one music note for a sequence of notes
+3. Many to One: Many inputs -> single output. E.g. Text classification; stock price forecasting
+4. Many to Many: Many inputs -> many outsputs. E.g. Named entity recognition; Machine translation. There are 2 cases here. Every input of the many, has one output, or the number of inputs is not necessarily equal to the number of outputs. Encoders are used in the latter case through a LSTM layer to allow for encoding and decoding.
 
+## Limitations of RNNs
+Some limitations include
 
+1. RNNs can be slow and complex
+2. RNNs perform poorly on long-term sequential data if the Tanh or ReLu activation fucntions are used. This is due to the problem of vanishing or exploding gradients.
 
-
-
-
+This however is quickly identifed and solved using LSTM networks.
 
